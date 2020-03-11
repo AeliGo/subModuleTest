@@ -1,0 +1,617 @@
+// BULMA VARIABLES
+
+@import url("https://fonts.googleapis.com/css?family=Krub:400,500,600|Questrial:400");
+
+// Colors
+
+$black:            #000000;
+$black-bis:        #06080e;
+$black-ter:        #121826;
+
+$grey-darker:      #222A3F;
+$grey-dark:        #4a5671;
+$grey:             #7e8ba3;
+$grey-light:       #adb7c8;
+$grey-lighter:     #cfd6e1;
+
+$white-ter:        #e8edf3;
+$white-bis:        #f4f6f9;
+$white:            #ffffff;
+
+$orange:           #ffb100;
+$orange-light: 		 #ffe5aa;
+$orange-dark: 		 #d23b01;
+$yellow:           #ffbb33; //
+$green: 					 #00C851;
+$green-light:      #d1f9ce;
+$green-dark:       #02672b;
+$turquoise:        #40e0d0; //
+$cyan:             #1A6DF6; //
+$blue: 						 #1A6DF6;
+$blue-light: 			 #dde9fe;
+$blue-dark: 			 #05388b;
+$purple: 					 #7e4eff;
+$purple-light: 		 #e3d9ff;
+$purple-dark: 		 #48347d;
+$red: 					 	 #ff0045;
+$red-light: 			 #ffe0e7;
+$red-dark: 				 #c10639;
+$mono: 						 #7488af;
+$mono-light: 			 #dee5ed;
+$mono-dark: 			 #222A3F;
+
+// Typography
+
+$family-serif: "Krub", "Times", serif;
+$family-sans-serif: "Questrial", "Helvetica", sans-serif;
+$family-icons: "Material Design Icons";
+$family-monospace: monospace;
+$render-mode: optimizeLegibility !default;;
+
+$size-1: 2.75rem;  //LARGE
+$size-2: 2.125rem;
+$size-3: 1.5rem;  //MEDIUM
+$size-4: 1.125rem;
+$size-5: 1rem;     //NORMAL
+$size-6: 0.875rem;
+$size-7: 0.75rem;  //SMALL
+
+$weight-light: 300 !default;;
+$weight-normal: 400 !default;;
+$weight-medium: 500 !default;;
+$weight-semibold: 600 !default;;
+$weight-bold: 700 !default;;
+
+// Spacing
+
+$block-spacing: 1.5rem !default;;
+
+// Responsiveness
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 32px !default;;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 576px;
+// 960px container + 4rem
+$desktop: 960px;
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default;;
+$widescreen-enabled: false;
+// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap) !default;;
+$fullhd-enabled: false;	
+
+// Miscellaneous
+
+$easing: ease-out !default;;
+$radius-small: 3px;
+$radius: 4px !default;;
+$radius-large: 6px !default;;
+$radius-rounded: 290486px !default;;
+$speed: 200ms;
+
+// Flags
+
+$variable-columns: true !default;
+
+$primary: #503ff5;
+
+$info: $cyan !default;
+$success: $green !default;
+$warning: $orange;
+$danger: $red !default;
+
+$light: $white-ter !default;
+$dark: $grey-darker !default;
+
+// Invert colors
+
+$orange-invert: $white;
+$yellow-invert: findColorInvert($yellow) !default;
+$green-invert: findColorInvert($green) !default;
+$turquoise-invert: findColorInvert($turquoise) !default;
+$cyan-invert: findColorInvert($cyan) !default;
+$blue-invert: findColorInvert($blue) !default;
+$purple-invert: findColorInvert($purple) !default;
+$red-invert: findColorInvert($red) !default;
+
+$primary-invert: $white;
+$info-invert: $cyan-invert !default;
+$success-invert: $green-invert !default;
+$warning-invert: $orange-invert;
+$danger-invert: $red-invert !default;
+$light-invert: $dark !default;
+$dark-invert: $light !default;
+
+// General colors
+
+$background: $white-bis;
+
+$border: lighten($grey-lighter, 5%);
+$border-hover: $grey-light !default;
+
+// Text colors
+
+$text: $grey-dark !default;
+$text-invert: findColorInvert($text) !default;
+$text-light: $grey !default;
+$text-strong: $grey-darker !default;
+
+// Code colors
+
+$code: $red !default;
+$code-background: $background !default;
+
+$pre: $text !default;
+$pre-background: $background !default;
+
+// Link colors
+
+$link: $info;
+$link-invert: $primary-invert;
+$link-visited: $purple !default;
+
+$link-hover: $grey-darker !default;
+$link-hover-border: $grey-light !default;
+
+$link-focus: $grey-darker !default;
+$link-focus-border: $blue !default;
+
+$link-active: $grey-darker !default;
+$link-active-border: $grey-dark !default;
+
+// Typography
+
+$family-primary: $family-serif;
+$family-secondary: $family-sans-serif;
+$family-code: $family-monospace;
+
+$size-small: $size-7;
+$size-normal: $size-5;
+$size-medium: $size-3;
+$size-large: $size-1;
+
+// Lists and maps
+
+$custom-colors: (
+	"orange": ($orange, $orange-light, $orange-dark),
+	"green": ($green, $green-light, $green-dark),
+	"blue": ($blue, $blue-light, $blue-dark),
+	"purple": ($purple, $purple-light, $purple-dark),
+	"red": ($red, $red-light, $red-dark),
+	"mono": ($mono, $mono-light, $mono-dark)
+);
+
+$custom-shades: (
+	"orange-light": $orange-light, 
+	"orange-dark": $orange-dark,
+	"green-light": $green-light,
+	"green-dark": $green-dark,
+	"blue-light": $blue-light, 
+	"blue-dark": $blue-dark,
+	"purple-light": $purple-light, 
+	"purple-dark": $purple-dark,
+	"red-light": $red-light, 
+	"red-dark": $red-dark,
+	"mono-light": $mono-light, 
+	"mono-dark": $mono-dark
+);
+
+$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "link": ($link, $link-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert)), $custom-colors) !default;
+$shades: mergeColorMaps(("black-bis": $black-bis, "black-ter": $black-ter, "grey-darker": $grey-darker, "grey-dark": $grey-dark, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "white-ter": $white-ter, "white-bis": $white-bis), $custom-shades) !default;
+
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;
+
+// BULMA UTILITIES
+
+$control-radius: $radius !default;
+$control-radius-small: $radius-small !default;
+
+$control-border-width: 1px !default;
+
+$control-height: 2.6155rem;
+$control-line-height: 1.6rem;
+
+$control-padding-vertical: calc(0.375rem - #{$control-border-width});
+$control-padding-horizontal: calc(0.5rem - #{$control-border-width});
+
+// BULMA GENERIC
+
+$body-background-color: $background;
+$body-size: 13px;
+$body-min-width: 300px !default;
+$body-rendering: optimizeLegibility !default;
+$body-family: $family-primary !default;
+$body-overflow-x: hidden !default;
+$body-overflow-y: scroll !default;
+
+$body-color: $text !default;
+$body-font-size: 1em !default;
+$body-weight: $weight-normal !default;
+$body-line-height: 1.6;
+
+$code-family: $family-code !default;
+$code-padding: 0.25em 0.5em 0.25em !default;
+$code-weight: normal !default;
+$code-size: 0.875em !default;
+
+$small-font-size: 0.875em !default;
+
+$hr-background-color: $border;
+$hr-height: 1px;
+$hr-margin: 1rem 0 1rem 0;
+
+$strong-color: $text-strong !default;
+$strong-weight: $weight-medium;
+
+$pre-font-size: 0.875em !default;
+$pre-padding: 1.25rem 1.5rem !default;
+$pre-code-font-size: 1em !default;
+
+// BULMA COMPONENTS
+
+// Card
+
+$card-color: $text !default;
+$card-background-color: $white !default;
+$card-shadow: none;
+
+$card-header-background-color: transparent !default;
+$card-header-color: $text-strong !default;
+$card-header-padding: 1.25rem 1.5rem;
+$card-header-shadow: none;
+$card-header-weight: $weight-medium;
+
+$card-content-background-color: transparent !default;
+$card-content-padding: 1.25rem 1.5rem;
+
+$card-footer-background-color: transparent !default;
+$card-footer-border-top: 1px solid $white-ter;
+$card-footer-padding: 1.25rem 1.5rem;
+
+$card-media-margin: $block-spacing !default;
+
+// Title
+
+$title-color: $grey-darker !default;
+$title-family: false !default;
+$title-size: $size-3 !default;
+$title-weight: $weight-medium;
+$title-line-height: 1.125 !default;
+$title-strong-color: inherit !default;
+$title-strong-weight: inherit !default;
+$title-sub-size: 0.75em !default;
+$title-sup-size: 0.75em !default;
+
+$subtitle-color: $grey-dark !default;
+$subtitle-family: false !default;
+$subtitle-size: $size-5 !default;
+$subtitle-weight: $weight-normal !default;
+$subtitle-line-height: 1.25 !default;
+$subtitle-strong-color: $grey-darker !default;
+$subtitle-strong-weight: $weight-medium;
+$subtitle-negative-margin: -1.25rem !default;
+
+// Table 
+
+$table-color: $grey-dark;
+$table-background-color: $white !default;
+
+$table-cell-border: 1px solid $white-ter;
+$table-cell-border-width: 0 0 1px !default;
+$table-cell-padding: 0.75rem 1rem;
+$table-cell-heading-color: $text-strong !default;
+
+$table-head-cell-border-width: 0rem;
+$table-head-cell-color: $text-strong !default;
+$table-foot-cell-border-width: 0rem;
+$table-foot-cell-color: $text-strong !default;
+
+$table-head-background-color: transparent !default;
+$table-body-background-color: transparent !default;
+$table-foot-background-color: transparent !default;
+
+$table-row-hover-background-color: $white-bis !default;
+
+$table-row-active-background-color: $primary !default;
+$table-row-active-color: $primary-invert !default;
+
+$table-striped-row-even-background-color: $white-bis !default;
+$table-striped-row-even-hover-background-color: $white-ter !default;
+
+// Tags
+
+$tag-background-color: $grey-lighter;
+$tag-color: $text !default;
+$tag-radius: $radius-small;
+$tag-delete-margin: 1px !default;
+
+// Tabs
+
+$tabs-border-bottom-color: $border !default;
+$tabs-border-bottom-style: solid !default;
+$tabs-border-bottom-width: 1px !default;
+$tabs-link-color: $grey-dark;
+$tabs-link-hover-border-bottom-color: $text-strong !default;
+$tabs-link-hover-color: $text-strong !default;
+$tabs-link-active-border-bottom-color: $link !default;
+$tabs-link-active-color: $link !default;
+$tabs-link-padding: 0.5rem 1.5rem;
+
+$tabs-boxed-link-radius: $radius !default;
+$tabs-boxed-link-hover-background-color: $background !default;
+$tabs-boxed-link-hover-border-bottom-color: $border !default;
+
+$tabs-boxed-link-active-background-color: $white !default;
+$tabs-boxed-link-active-border-color: $border !default;
+$tabs-boxed-link-active-border-bottom-color: transparent !default;
+
+$tabs-toggle-link-border-color: $background;
+$tabs-toggle-link-border-style: solid !default;
+$tabs-toggle-link-border-width: 1px !default;
+$tabs-toggle-link-hover-background-color: $white-ter;
+$tabs-toggle-link-hover-border-color: $background;
+$tabs-toggle-link-radius: $radius !default;
+$tabs-toggle-link-active-background-color: $grey-darker;
+$tabs-toggle-link-active-border-color: $background;
+$tabs-toggle-link-active-color: $white;
+
+// Dropdown
+
+$dropdown-menu-min-width: 12rem !default;
+
+$dropdown-content-background-color: $white !default;
+$dropdown-content-arrow: $link !default;
+$dropdown-content-offset: 0.75rem;
+$dropdown-content-padding-bottom: 0.75rem;
+$dropdown-content-padding-top: 0.75rem;
+$dropdown-content-radius: $radius !default;
+$dropdown-content-shadow: 0px 0px 0px 1px $border;
+$dropdown-content-z: 20 !default;
+
+$dropdown-item-color: $grey-dark;
+$dropdown-item-hover-color: $primary;
+$dropdown-item-hover-background-color: transparent;
+$dropdown-item-active-color: $primary;
+$dropdown-item-active-background-color: transparent;
+
+$dropdown-divider-background-color: $border !default;
+
+// List
+
+$list-background-color: $white !default;
+$list-shadow: none;
+$list-radius: 0;
+
+$list-item-border: 1px solid $border !default;
+$list-item-color: $text !default;
+$list-item-active-background-color: $grey-darker;
+$list-item-active-color: $white;
+$list-item-hover-background-color: $background !default;
+
+// Modal
+
+$modal-z: 40 !default;
+
+$modal-background-background-color: rgba($black-ter,.9);
+
+$modal-content-width: 640px !default;
+$modal-content-margin-mobile: 20px !default;
+$modal-content-spacing-mobile: 160px !default;
+$modal-content-spacing-tablet: 40px !default;
+
+$modal-close-dimensions: 40px !default;
+$modal-close-right: 20px !default;
+$modal-close-top: 20px !default;
+
+$modal-card-spacing: 40px !default;
+
+$modal-card-head-background-color: $white;
+$modal-card-head-border-bottom: 1px solid $border !default;
+$modal-card-head-padding: 20px !default;
+$modal-card-head-radius: $radius;
+
+$modal-card-title-color: $text-strong !default;
+$modal-card-title-line-height: 1 !default;
+$modal-card-title-size: $size-3;
+
+$modal-card-foot-radius: $radius;
+$modal-card-foot-border-top: 0;
+
+$modal-card-body-background-color: $white !default;
+$modal-card-body-padding: 2rem;
+
+// Navbar
+
+$navbar-background-color: $white !default;
+$navbar-box-shadow-size: 0 1px 0 0;
+$navbar-box-shadow-color: $border;
+$navbar-height: 5rem;
+$navbar-padding-vertical: 1rem !default;
+$navbar-padding-horizontal: 2rem !default;
+$navbar-z: 30 !default;
+$navbar-fixed-z: 30 !default;
+
+$navbar-item-color: $grey-dark !default;
+$navbar-item-hover-color: $link !default;
+$navbar-item-hover-background-color: transparent;
+$navbar-item-active-color: $black !default;
+$navbar-item-active-background-color: transparent !default;
+$navbar-item-img-max-height: unset;
+
+$navbar-burger-color: $navbar-item-color !default;
+
+$navbar-tab-hover-background-color: transparent !default;
+$navbar-tab-hover-border-bottom-color: $link !default;
+$navbar-tab-active-color: $link !default;
+$navbar-tab-active-background-color: transparent !default;
+$navbar-tab-active-border-bottom-color: $link !default;
+$navbar-tab-active-border-bottom-style: solid !default;
+$navbar-tab-active-border-bottom-width: 3px !default;
+
+$navbar-dropdown-background-color: $white !default;
+$navbar-dropdown-border-top: 2px solid $border !default;
+$navbar-dropdown-offset: -4px !default;
+$navbar-dropdown-arrow: $link !default;
+$navbar-dropdown-radius: $radius-large !default;
+$navbar-dropdown-z: 20 !default;
+
+$navbar-dropdown-boxed-radius: $radius-large !default;
+$navbar-dropdown-boxed-shadow: 0 8px 8px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
+
+$navbar-dropdown-item-hover-color: $black !default;
+$navbar-dropdown-item-hover-background-color: $background !default;
+$navbar-dropdown-item-active-color: $link !default;
+$navbar-dropdown-item-active-background-color: $background !default;
+
+$navbar-divider-background-color: $background !default;
+$navbar-divider-height: 2px !default;
+
+$navbar-bottom-box-shadow-size: 0 -2px 0 0 !default;
+
+$navbar-breakpoint: $tablet;
+
+// Pagination
+
+$pagination-color: $grey-darker !default;
+$pagination-border-color: transparent;
+$pagination-margin: 0;
+$pagination-min-width: $control-height !default;
+
+$pagination-item-font-size: 1em !default;
+$pagination-item-margin: 0.25rem !default;
+$pagination-item-padding-left: 0.5em !default;
+$pagination-item-padding-right: 0.5em !default;
+
+$pagination-hover-color: $link-hover !default;
+$pagination-hover-border-color: transparent;
+
+$pagination-focus-color: $link-focus !default;
+$pagination-focus-border-color: transparent;
+
+$pagination-active-color: $link-active !default;
+$pagination-active-border-color: transparent;
+
+$pagination-disabled-color: $grey !default;
+$pagination-disabled-background-color: $grey-lighter !default;
+$pagination-disabled-border-color: transparent;
+
+$pagination-current-color: $link-invert !default;
+$pagination-current-background-color: $grey-darker;
+$pagination-current-border-color: transparent;
+
+$pagination-ellipsis-color: $grey-light !default;
+
+$pagination-shadow-inset: none;
+
+// BULMA ELEMENTS
+
+// Box
+
+$box-color: $text !default;
+$box-background-color: $white !default;
+$box-radius: $radius;
+$box-shadow: none;
+$box-padding: $card-header-padding;
+
+$box-link-hover-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px $link !default;
+$box-link-active-shadow: inset 0 1px 2px rgba($black, 0.2), 0 0 0 1px $link !default;
+
+// Form
+
+$input-color: $grey-darker !default;
+$input-background-color: $white-bis;
+$input-border-color: $white-ter;
+$input-height: $control-height !default;
+$input-shadow: none;
+$input-placeholder-color: $grey;
+
+$input-hover-color: $grey-darker !default;
+$input-hover-border-color: $white-ter;
+
+$input-focus-color: $grey-darker !default;
+$input-focus-border-color: $link !default;
+$input-focus-box-shadow-size: 0 0 0 3px;
+$input-focus-box-shadow-color: rgba($link, 0.25) !default;
+
+$input-disabled-color: $text-light !default;
+$input-disabled-background-color: $background !default;
+$input-disabled-border-color: $background !default;
+$input-disabled-placeholder-color: rgba($input-disabled-color, 0.3) !default;
+
+$input-arrow: $link !default;
+
+$input-icon-color: $grey-lighter !default;
+$input-icon-active-color: $grey !default;
+
+$input-radius: $radius-small;
+
+// Tools
+
+$label-color: $grey-darker !default;
+$label-weight: $weight-medium;
+
+$help-size: $size-6;
+
+// Image
+
+$dimensions: 16 24 32 48 64 96 128 256;
+
+// BULMA LAYOUT
+
+$section-padding: 2rem;
+$section-padding-medium: 9rem 1.5rem !default;
+$section-padding-large: 18rem 1.5rem !default;
+
+// BULMA BADGE
+
+$badge-border-size: 0;
+$badge-padding: 0.15rem 0.5rem 0.3rem 0.5rem;
+$badge-z-index: 40;
+
+// BUEFY
+
+$dropdown-mobile-breakpoint: $tablet;
+
+
+
+// TODO
+
+// BUTTONS NEEDS TO BE FIXED
+
+$button-color: $grey-dark;
+$button-background-color: $white;
+$button-family: false;
+
+$button-border-color: $grey-lighter;
+$button-border-width: $control-border-width;
+
+$button-padding-vertical: calc(0.375rem - #{$button-border-width});
+$button-padding-horizontal: 1rem;
+
+$button-hover-color: $grey-darker;
+$button-hover-border-color: $grey-light;
+
+$button-focus-color: $grey-darker;
+$button-focus-border-color: $grey-light;
+$button-focus-box-shadow-size: 0 0 0 3px;
+$button-focus-box-shadow-color: rgba($grey-lighter, 0.5);
+
+$button-active-color: $grey-darker;
+$button-active-border-color: $grey-light;
+
+$button-text-color: $text;
+$button-text-hover-background-color: $background;
+$button-text-hover-color: $text-strong;
+
+$button-disabled-background-color: $white;
+$button-disabled-border-color: $grey-lighter;
+$button-disabled-shadow: none;
+$button-disabled-opacity: 0.5;
+
+$button-static-color: $grey;
+$button-static-background-color: $white-bis;
+$button-static-border-color: $grey-lighter;
+
+
+
