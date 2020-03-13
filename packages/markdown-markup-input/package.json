@@ -2,9 +2,9 @@
   "name": "markdown-markup-input",
   "version": "1.0.2",
   "description": "An embedded markdown text editor based on stackedit.",
-  "module": "dist/vueStackedit.umd.js",
-  "unpkg": "dist/vueStackedit.umd.min.js",
-  "jsdelivr": "dist/vueStackedit.umd.min.js",
+  "module": "dist/markdown-markup-input.umd.js",
+  "unpkg": "dist/markdown-markup-input.umd.min.js",
+  "jsdelivr": "dist/markdown-markup-input.umd.min.js",
   "repository": {
     "url": "https://github.com/AeliGo/md-text.git",
     "type": "git"
@@ -17,10 +17,10 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve --port 8089",
-    "build": "vue-cli-service build --target lib --name vueStackedit",
+    "build": "vue-cli-service build --target lib --name markdown-markup-input",
     "lint": "vue-cli-service lint"
   },
-  "author": "loliconer",
+  "author": "zoey",
   "license": "MIT",
   "dependencies": {
     "vue": "^2.6.10",

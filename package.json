@@ -11,6 +11,7 @@
     "buefy": "^0.8.3",
     "collect.js": "^4.20.2",
     "core-js": "^2.6.5",
+    "markdown-markup-input": "file:packages/markdown-markup-input",
     "marked": "^0.8.0",
     "normalizr": "^3.4.1",
     "v-click-outside-x": "^4.1.0",

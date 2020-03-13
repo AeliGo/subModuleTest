@@ -13,23 +13,23 @@
   </div>
 </template>
 <script>
-import "./extensions";
-import "./services/optional";
-import editorSvcFun from "./services/editorSvc";
+import './extensions';
+import './services/optional';
+import editorSvcFun from './services/editorSvc';
 
 export default {
-  name: "markdown-markup-input",
+  name: 'markdown-markup-input',
 
   props: {
     value: {
       type: String,
-      default: ""
-    }
+      default: '',
+    },
   },
 
   data() {
     return {
-      editorSvc: new editorSvcFun()
+      editorSvc: new editorSvcFun(),
     };
   },
 
@@ -45,25 +45,25 @@ export default {
     handleInputChange(e) {
       //esc,left,up,right,down key
       if ([27, 37, 38, 39, 40].includes(e.keyCode)) return;
-      this.$emit("input", this.getContent());
-    }
+      this.$emit('input', this.getContent());
+    },
   },
 
   watch: {
     value() {
-      this.setContent(this.value || "");
-    }
+      this.setContent(this.value || '');
+    },
   },
 
   mounted() {
-    const editorElt = this.$el.querySelector(".ve-editor .editor-inner");
+    const editorElt = this.$el.querySelector('.ve-editor .editor-inner');
     this.editorSvc.init(editorElt);
 
-    this.setContent(this.value || "");
-  }
+    this.setContent(this.value || '');
+  },
 };
 </script>
 <style type="text/less" lang="less">
-@import "less/prism.css";
-@import "less/style";
+@import 'less/prism.css';
+@import 'less/style';
 </style>
