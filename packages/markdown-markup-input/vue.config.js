@@ -3,20 +3,22 @@ module.exports = {
     extract: false,
     loaderOptions: {
       less: {
-        strictMath: 'on'
-      }
-    }
+        strictMath: 'on',
+      },
+    },
   },
+
   chainWebpack: config => {
-    config.performance.hints(false)
+    config.resolve.symlinks(false);
+    config.performance.hints(false);
     config.module
       .rule('yml')
       .test(/\.yml$/)
       .use('raw-loader')
       .loader('raw-loader')
-      .end()
+      .end();
     config.externals({
-      vue: 'Vue'
+      vue: 'Vue',
     })
   }
-}
+};

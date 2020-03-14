@@ -13,6 +13,7 @@ import VueCurrencyInput from 'vue-currency-input';
 
 import VueSlideoutPanel from 'vue2-slideout-panel';
 
+import MarkdownMarkupInput from 'markdown-markup-input';
 Vue.use(VueSlideoutPanel);
 
 const pluginOptions = {
@@ -24,6 +25,8 @@ window.collect = collect;
 
 // register globally
 Vue.component('multiselect', Multiselect);
+console.log(MarkdownMarkupInput, 1);
+Vue.component('markdown-markup-input', MarkdownMarkupInput)
 Vue.use(VeeValidate, {
   events: '',
 });
